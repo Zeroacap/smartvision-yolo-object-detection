@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Book', 'Bottle', 'Phone']
+
+roboflow:
+  workspace: asyraf-s-workspace
+  project: smartvision-yolo-object-detectio
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/asyraf-s-workspace/smartvision-yolo-object-detectio/dataset/2

@@ -1,50 +1,18 @@
 from ultralytics import YOLO
 
-EXPERIMENTS = [
-    {
-        "name": "baseline",
-        "epochs": 50,
-        "imgsz": 640,
-        "batch": 16,
-        "lr0": 0.01,
-        "optimizer": "SGD",
-    },
-    {
-        "name": "tune_lr",
-        "epochs": 50,
-        "imgsz": 640,
-        "batch": 16,
-        "lr0": 0.005,
-        "optimizer": "SGD",
-    },
-    {
-        "name": "tune_adamw",
-        "epochs": 70,
-        "imgsz": 640,
-        "batch": 16,
-        "lr0": 0.001,
-        "optimizer": "AdamW",
-    },
-]
+# Load pretrained YOLO11 model
+model = YOLO("yolo11n.pt")
 
-def main():
-    for exp in EXPERIMENTS:
-        print("\nRunning:", exp["name"])
-        model = YOLO("yolo11n.pt")
-        model.train(
-            data="data.yaml",
-            epochs=exp["epochs"],
-            imgsz=exp["imgsz"],
-            batch=exp["batch"],
-            lr0=exp["lr0"],
-            optimizer=exp["optimizer"],
-            project="runs/detect",
-            name=exp["name"],
-            plots=True,
-            save=True,
-            pretrained=True,
-            seed=42,
-        )
+# Hyperparameter tuning
+model.train(
+    data="roboflow_dataset/data.yaml",
+    epochs=5,
+    imgsz=512,
+    batch=16,
+    optimizer="Adam",
+    lr0=0.001,
+    project="runs/smartvision",
+    name="tuning_adam_5epoch"
+)
 
-if __name__ == "__main__":
-    main()
+print("Tuning 5 epoch selesai.")
