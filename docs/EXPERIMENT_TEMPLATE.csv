@@ -1,0 +1,4 @@
+experiment,model,epochs,imgsz,batch,lr0,optimizer,precision,recall,mAP50,mAP50_95
+baseline,yolo11n.pt,50,640,16,0.01,SGD,,,,
+tune_lr,yolo11n.pt,50,640,16,0.005,SGD,,,,
+tune_adamw,yolo11n.pt,70,640,16,0.001,AdamW,,,,

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+runs/
+raw_images/
+dataset/images/
+dataset/labels/
+*.pt
+.DS_Store

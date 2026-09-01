@@ -1,0 +1,14 @@
+ultralytics>=8.3.0
+torch
+torchvision
+numpy
+pandas
+matplotlib
+opencv-python
+Pillow
+PyYAML
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+requests
