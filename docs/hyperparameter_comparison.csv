@@ -1,0 +1,5 @@
+Metric,Baseline_SGD,Tuning_Adam
+Precision,0.93119,0.98061
+Recall,0.93618,0.92457
+mAP50,0.98151,0.98893
+mAP50-95,0.83186,0.85787
